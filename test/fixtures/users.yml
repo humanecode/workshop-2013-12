@@ -1,0 +1,4 @@
+mike:
+  name: Mike Moore
+  email: mike@example.com
+  password_digest: <%= BCrypt::Password.create "mike" %>
