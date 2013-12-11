@@ -28,21 +28,21 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_create_1_record
-    begin_count = User.count
-    create_random_user
-    assert_equal begin_count + 1, User.count
+    assert_difference "User.count", 1 do
+      create_random_user
+    end
   end
 
   def test_create_3_records
-    begin_count = User.count
-    3.times { create_random_user }
-    assert_equal begin_count + 3, User.count
+    assert_difference "User.count", 3 do
+      3.times { create_random_user }
+    end
   end
 
   def test_create_10_records
-    begin_count = User.count
-    10.times { create_random_user }
-    assert_equal begin_count + 10, User.count
+    assert_difference "User.count", 10 do
+      10.times { create_random_user }
+    end
   end
 
   def create_random_user
