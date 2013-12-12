@@ -1,0 +1,19 @@
+<%= form_for @comment, url: group_day_post_comments_url(@group, @day, @post) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :body, class: "sr-only" %>
+    <%= f.text_area :body, class: "forom-control", placeholder: "Post" %>
+  </div>
+  <%= f.submit %>
+<% end %>

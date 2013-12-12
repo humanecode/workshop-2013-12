@@ -9,6 +9,6 @@ class GroupsController < ApplicationController
     @prev = @day.prev_day
     @next = @day.next_day
     @posts = @group.posts_for @day
-    render "days/show"
+    render "posts/index"
   end
 end
