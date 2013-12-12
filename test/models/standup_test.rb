@@ -95,4 +95,18 @@ class StandupTest < ActiveSupport::TestCase
       refute post.valid?
     end
   end
+
+  def test_comments_for
+    post = posts :payroll_carl_today
+    comment = comments :payroll_carl_today_one
+    assert_includes standup.comments_for(post), comment
+  end
+
+  def test_add_comment
+    post = posts :payroll_carl_today
+    mike = users :mike
+    assert_difference "Comment.count", 1 do
+      standup.add_comment post, mike, "Please don't fire me."
+    end
+  end
 end

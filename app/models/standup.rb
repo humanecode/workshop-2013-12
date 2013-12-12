@@ -30,4 +30,12 @@ class Standup
   def add_post group, user, date, body
     group.add_post user, date, body
   end
+
+  def comments_for post
+    post.comments
+  end
+
+  def add_comment post, user, body
+    post.comments.create user: user, body: body
+  end
 end
