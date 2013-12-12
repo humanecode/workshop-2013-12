@@ -1,0 +1,19 @@
+<%= form_for @post, url: group_day_posts_url(@group, @day) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :body, class: "sr-only" %>
+    <%= f.text_area :body, class: "forom-control", placeholder: "Post" %>
+  </div>
+  <%= f.submit %>
+<% end %>

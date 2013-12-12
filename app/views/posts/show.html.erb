@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-lg-4">
+    <%= @post.user.name %> says:
+  </div>
+  <div class="col-lg-8">
+    <%= @post.body %>
+  </div>
+</div>
+<h3>Comments</h3>
+<% @post.comments.in_groups_of(3, false) do |comments| %>
+  <div class="row">
+    <% comments.each do |comment| %>
+      <div class="col-lg-4">
+        <%= comment.user.name %> says:
+        <%= comment.body %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', group_day_posts_url(@group, @day) %>

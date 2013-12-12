@@ -2,7 +2,9 @@ DailyStandup::Application.routes.draw do
   root "home#index"
 
   resources :groups, only: [:index, :show] do
-    resources :days, only: [:index, :show]
+    resources :days, only: [:index, :show] do
+      resources :posts, only: [:index, :show, :new, :create]
+    end
   end
 
   # Session login/logout
