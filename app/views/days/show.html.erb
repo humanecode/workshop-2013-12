@@ -1,0 +1,18 @@
+<h1><%= @group.name %></h1>
+<p>
+  <%= link_to group_day_path@group, @prev do %>
+    Previous <%= pluralize @group.posts_for(@prev).count, "post" %>
+  <% end %>
+  -
+  <%= @day %> <%= pluralize @group.posts_for(@day).count, "post" %>
+  -
+  <%= link_to group_day_path@group, @next do %>
+    Next <%= pluralize @group.posts_for(@next).count, "post" %>
+  <% end %>
+</p>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= post.user.name %> says: <%= post.body %> - <%= pluralize post.comments.count, "comment" %></li>
+  <% end %>
+</ul>
