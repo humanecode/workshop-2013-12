@@ -25,6 +25,15 @@ class UserTest < ActiveSupport::TestCase
     assert_valid user
   end
 
+  def test_validates_email_uniqueness
+    mike = users :mike
+    mike2 = User.create email: mike.email,
+                        password: "mike2",
+                        password_confirmation: "mike2"
+    refute_valid mike2
+    assert_includes mike2.errors[:email], "has already been taken"
+  end
+
   def test_authenticate_bad_password
     mike = users :mike
     user = User.authenticate mike.email, "mike".reverse
