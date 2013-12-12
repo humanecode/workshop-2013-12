@@ -1,13 +1,71 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+payroll_ben_today:
+  group: payroll
+  user: ben
+  date: <%= Date.today %>
+  body: I did great! Looking forward to tomorrow.
 
-one:
-  group_id: 1
-  user_id: 1
-  date: 2013-12-12
-  body: MyText
+payroll_ben_yesterday:
+  group: payroll
+  user: ben
+  date: <%= Date.yesterday %>
+  body: Today was hard. So many checks to write. My hand hurts.
 
-two:
-  group_id: 1
-  user_id: 1
-  date: 2013-12-12
-  body: MyText
+payroll_carl_today:
+  group: payroll
+  user: carl
+  date: <%= Date.today %>
+  body: Who keeps stealing my stapler?!?
+
+payroll_heidi_yesterday:
+  group: payroll
+  user: heidi
+  date: <%= Date.yesterday %>
+  body: Sometimes days are just perfect. Today was one of those days.
+
+payroll_jack_today:
+  group: payroll
+  user: jack
+  date: <%= Date.today %>
+  body: All work and no play makes Jack a dull boy.
+
+payroll_jack_yesterday:
+  group: payroll
+  user: jack
+  date: <%= Date.yesterday %>
+  body: All work and no play makes Jack a dull boy.
+
+devops_jack_today:
+  group: devops
+  user: jack
+  date: <%= Date.today %>
+  body: All work and no play makes Jack a dull boy.
+
+devops_jack_yesterday:
+  group: devops
+  user: jack
+  date: <%= Date.yesterday %>
+  body: All work and no play makes Jack a dull boy.
+
+devops_mike_today:
+  group: devops
+  user: mike
+  date: <%= Date.today %>
+  body: Finally got the servers up. Now to get them configured.
+
+devops_mike_yesterday:
+  group: devops
+  user: mike
+  date: <%= Date.yesterday %>
+  body: Been struggling with getting these servers installed.
+
+devops_sara_today:
+  group: devops
+  user: sara
+  date: <%= Date.today %>
+  body: I am the master of Chef!
+
+devops_zach_yesterday:
+  group: devops
+  user: zach
+  date: <%= Date.yesterday %>
+  body: Helping Sara with Chef. She's picking it up pretty well.

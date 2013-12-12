@@ -1,4 +1,34 @@
+ben:
+  name: Ben McBenjamin
+  email: ben@example.com
+  password_digest: <%= BCrypt::Password.create "ben" %>
+
+carl:
+  name: Carl McCarlson
+  email: carl@example.com
+  password_digest: <%= BCrypt::Password.create "carl" %>
+
+heidi:
+  name: Heidi McHenderson
+  email: heidi@example.com
+  password_digest: <%= BCrypt::Password.create "heidi" %>
+
+jack:
+  name: jack McJackerson
+  email: jack@example.com
+  password_digest: <%= BCrypt::Password.create "jack" %>
+
 mike:
   name: Mike Moore
   email: mike@example.com
   password_digest: <%= BCrypt::Password.create "mike" %>
+
+sara:
+  name: Sara McSararison
+  email: sara@example.com
+  password_digest: <%= BCrypt::Password.create "sara" %>
+
+zach:
+  name: Zach McZacheria
+  email: zach@example.com
+  password_digest: <%= BCrypt::Password.create "zach" %>

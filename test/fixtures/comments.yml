@@ -1,11 +1,39 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+payroll_carl_today_one:
+  post: payroll_carl_today
+  user: mike
+  body: Muah hah hah!
 
-one:
-  post_id: 1
-  user_id: 1
-  body: MyText
+payroll_carl_today_two:
+  post: payroll_carl_today
+  user: heidi
+  body: Mike! Leave his stapler alone!
 
-two:
-  post_id: 1
-  user_id: 1
-  body: MyText
+payroll_carl_today_three:
+  post: payroll_carl_today
+  user: carl
+  body: Why?!?
+
+payroll_carl_today_four:
+  post: payroll_carl_today
+  user: ben
+  body: I am writing the disciplinary action now.
+
+payroll_carl_today_five:
+  post: payroll_carl_today
+  user: mike
+  body: I didn't really take it. It was a joke.
+
+devops_zach_yesterday_one:
+  post: devops_zach_yesterday
+  user: sara
+  body: You are a great teacher!
+
+devops_zach_yesterday_two:
+  post: devops_zach_yesterday
+  user: zach
+  body: You are a great student!
+
+devops_zach_yesterday_three:
+  post: devops_zach_yesterday
+  user: mike
+  body: My brain doesn't understand Chef...

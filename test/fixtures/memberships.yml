@@ -1,9 +1,35 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+payroll_ben:
+  group: payroll
+  user: ben
 
-one:
-  group_id: 1
-  user_id: 1
+payroll_carl:
+  group: payroll
+  user: carl
 
-two:
-  group_id: 1
-  user_id: 1
+payroll_heidi:
+  group: payroll
+  user: heidi
+
+payroll_jack:
+  group: payroll
+  user: jack
+
+payroll_mike:
+  group: payroll
+  user: mike
+
+devops_jack:
+  group: devops
+  user: jack
+
+devops_mike:
+  group: devops
+  user: mike
+
+devops_sara:
+  group: devops
+  user: sara
+
+devops_zach:
+  group: devops
+  user: zach

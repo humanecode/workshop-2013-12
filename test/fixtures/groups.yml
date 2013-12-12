@@ -1,7 +1,8 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+payroll:
+  name: Payroll Team
 
-one:
-  name: MyString
+devops:
+  name: IT Operations
 
-two:
-  name: MyString
+empty:
+  name: The Lonely Island
