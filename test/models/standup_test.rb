@@ -54,4 +54,45 @@ class StandupTest < ActiveSupport::TestCase
     standup.remove_user_from group, nonmember
     refute standup.is_member_of?(group, nonmember)
   end
+
+  def test_posts_for
+    assert_equal 3, standup.posts_for(group, Date.today).count
+    assert_equal 3, standup.posts_for(group, Date.yesterday).count
+    assert_equal 0, standup.posts_for(group, Date.tomorrow).count
+  end
+
+  def test_posts_for_today
+    assert_includes standup.posts_for(group, Date.today), posts(:payroll_ben_today)
+  end
+
+  def test_posts_for_yesterday
+    assert_includes standup.posts_for(group, Date.yesterday), posts(:payroll_ben_yesterday)
+  end
+
+  def test_post_for
+    assert_equal posts(:payroll_carl_today),
+                 standup.post_for(group, users(:carl), Date.today)
+    assert_equal posts(:payroll_heidi_yesterday),
+                 standup.post_for(group, users(:heidi), Date.yesterday)
+    assert_equal posts(:payroll_jack_today),
+                 standup.post_for(group, users(:jack), Date.today)
+    assert_nil standup.post_for(group, users(:mike), Date.today)
+  end
+
+  def test_add_post
+    # mike doesn't have any posts for payroll
+    mike = users :mike
+    assert_difference "Post.count", 1 do
+      standup.add_post group, mike, Date.today, "I'm late, but I got it done."
+    end
+  end
+
+  def test_add_post_wont_create_duplicates
+    # ben already has a post for payroll
+    ben = users :ben
+    assert_difference "Post.count", 0 do
+      post = standup.add_post group, ben, Date.today, "This is a duplicate."
+      refute post.valid?
+    end
+  end
 end

@@ -18,4 +18,16 @@ class Standup
   def remove_user_from group, user
     group.remove_member user
   end
+
+  def posts_for group, date
+    group.posts_for date
+  end
+
+  def post_for group, user, date
+    group.post_for user, date
+  end
+
+  def add_post group, user, date, body
+    group.add_post user, date, body
+  end
 end
