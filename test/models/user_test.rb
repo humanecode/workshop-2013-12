@@ -1,6 +1,18 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  def test_can_be_valid
+    mike = users :mike
+    assert_valid mike
+  end
+
+  def test_validates_email_presence
+    mike = users :mike
+    mike.email = nil
+    refute_valid mike
+    assert_includes mike.errors[:email], "can't be blank"
+  end
+
   def test_can_authenticate
     mike = users :mike
     refute_nil mike.authenticate("mike")
