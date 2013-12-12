@@ -1,6 +1,6 @@
 <h1>Daily Standup</h1>
 <% @standup.groups.each do |group| %>
-  <h3><%= group.name %></h3>
+  <h3><%= link_to group.name, group %></h3>
   <p>Today <%= pluralize @standup.posts_for(group, Date.today).count, "post" %> -
      Yesterday <%= pluralize @standup.posts_for(group, Date.yesterday).count, "post" %></p>
 <% end %>

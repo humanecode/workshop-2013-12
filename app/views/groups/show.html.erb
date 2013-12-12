@@ -1,0 +1,3 @@
+<h1><%= @group.name %></h1>
+<h3>Today <%= pluralize @group.posts_for(Date.today).count, "post" %></h3>
+<h3>Yesterday <%= pluralize @group.posts_for(Date.yesterday).count, "post" %></h3>
