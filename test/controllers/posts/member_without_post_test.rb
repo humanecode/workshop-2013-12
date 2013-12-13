@@ -1,6 +1,8 @@
 require "test_helper"
 
-class PostsControllerTest < ActionController::TestCase
+class MemberWithoutPostTest < ActionController::TestCase
+  tests PostsController
+
   def group
     @group ||= groups :payroll
   end
