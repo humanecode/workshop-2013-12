@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+  include PermissionsHelper
   before_action :set_group_and_day_and_posts
   before_action :set_post, only: [:show]
+  # before_filter :enforce_login, only: [:new, :create]
 
   # GET /groups/:group_id/days/:day_id/posts
   def index
@@ -14,6 +16,8 @@ class PostsController < ApplicationController
 
   # GET /groups/:group_id/days/:day_id/posts/new
   def new
+    return redirect_to group_day_posts_path(@group, @day) unless can_create_post?
+
     @post = @posts.new
   end
 
@@ -29,6 +33,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def already_has_post?
+    Standup.new.post_for(@group, current_user, @day).present?
+  end
 
   def set_group_and_day_and_posts
     standup = Standup.new

@@ -23,7 +23,7 @@ class DaysController < ApplicationController
   protected
 
   def set_group
-    @group = Group.find params[:group_id]
+    @group = Standup.new.groups.find params[:group_id]
   end
 
   def date

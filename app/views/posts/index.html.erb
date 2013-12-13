@@ -21,4 +21,6 @@
   <% end %>
 </ul>
 
-<%= link_to 'New Post', new_group_day_post_url(@group, @day) %>
+<% if can_create_post? %>
+  <%= link_to 'New Post', new_group_day_post_url(@group, @day) %>
+<% end %>
